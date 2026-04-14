@@ -18,7 +18,7 @@ const Banner = () => {
              </div>
 
              {/* Show 4 summary cards  */}
-             <div>
+             <div className='mb-20'>
                 <StatusCards />
              </div>
         </div>
