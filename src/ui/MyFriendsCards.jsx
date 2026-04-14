@@ -16,7 +16,7 @@ const MyFriendsCards = ({friend}) => {
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title mx-auto text-center">
+                  <h2 className="card-title mx-auto text-center font-semibold text-2xl text-[#1f2937]">
                     {friend.name}
                   </h2>
                   <p className="mx-auto text-center mb-1">
@@ -42,7 +42,7 @@ const MyFriendsCards = ({friend}) => {
                             : friend.status === "Overdue"
                             ? "bg-red-500 text-white"
                             : friend.status === "On-Track"
-                            ? "bg-[#1f2937] text-white"
+                            ? "bg-[#244d3f] text-white"
                             : "bg-gray-300 text-gray-700"
                         }`}
                       >
