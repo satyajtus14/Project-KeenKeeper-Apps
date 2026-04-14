@@ -3,7 +3,7 @@ import React from 'react';
 const StatusCards = () => {
     return (
     <div className=' container mx-auto flex justify-between  gap-5'>
-    <div className="card bg-slate-100 w-60 shadow-sm">
+    <div className="card bg-white w-60 shadow">
   <figure className="px-5 pt-5">
    <p className='text-2xl font-bold text-[#244d3f]'>10</p>
   </figure>
@@ -12,7 +12,7 @@ const StatusCards = () => {
   </div>
     </div>
 
-    <div className="card bg-slate-100 w-60 shadow-sm">
+    <div className="card bg-white w-60 shadow">
   <figure className="px-5 pt-5">
    <p className='text-2xl font-bold text-[#244d3f]'>10</p>
   </figure>
@@ -21,7 +21,7 @@ const StatusCards = () => {
   </div>
     </div>
 
-    <div className="card  bg-slate-100 w-60 shadow-sm">
+    <div className="card  bg-white w-60 shadow">
   <figure className="px-5 pt-5">
    <p className='text-2xl font-bold text-[#244d3f]'>10</p>
   </figure>
@@ -30,7 +30,7 @@ const StatusCards = () => {
   </div>
     </div>
 
-    <div className="card  bg-slate-100 w-70 shadow-sm ">
+    <div className="card  bg-white w-70 shadow ">
   <figure className="px-5 pt-5">
    <p className='text-2xl font-bold text-[#244d3f]'>10</p>
   </figure>
