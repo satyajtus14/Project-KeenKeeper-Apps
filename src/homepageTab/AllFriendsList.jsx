@@ -1,22 +1,27 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import MyFriendsCards from "../ui/MyFriendsCards";
 import { ClipLoader } from "react-spinners";
 
+import useFndHook from "../customHook/useFndHook";
+
 const AllFriendsList = () => {
-  const [friends, setFriends] = useState([]);
+  // const [friends, setFriends] = useState([]);
 
-  const [loading, setLoading] = useState(true)
+  // const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const friendsFetchData = async () => {
-      const res = await fetch("/friends.json");
-      const data = await res.json();
-      console.log("Data fetching from AllFriendsList page", data);
-      setFriends(data);
-      setLoading(false);
-    };
-    friendsFetchData();
-  }, []);
+  // useEffect(() => {
+  //   const friendsFetchData = async () => {
+  //     const res = await fetch("/friends.json");
+  //     const data = await res.json();
+  //     console.log("Data fetching from AllFriendsList page", data);
+  //     setFriends(data);
+  //     setLoading(false);
+  //   };
+  //   friendsFetchData();
+  // }, []);
+ 
+  /* Use Custom hook to loading data */
+  const {friends, loading} = useFndHook();
 
   console.log(friends);
   console.log(loading,"Loading data");

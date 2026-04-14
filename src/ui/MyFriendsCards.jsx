@@ -1,11 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const MyFriendsCards = ({friend}) => {
     return (
-        <div>
-            <div
-             
-              className="shadow-sm rounded-lg border overflow-hidden border-zinc-300"
+        <Link to={`/friends/${friend.id}`}>
+            <div className="shadow-sm rounded-lg border overflow-hidden border-zinc-300"
             >
               <div className="card bg-base-100 w-96 shadow-sm">
                 <figure>
@@ -53,7 +52,7 @@ const MyFriendsCards = ({friend}) => {
                 </div>
               </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
