@@ -32,17 +32,18 @@ const StatusCards = () => {
   console.log(friends);
 
     return (
+    <div>
     <div className=' container mx-auto flex justify-between  gap-5'>
-    <div className="card bg-white w-60 shadow">
+    <div className="card bg-white w-60 border shadow border-slate-300">
   <figure className="px-5 pt-5">
    <p className='text-4xl font-bold text-[#244d3f]'>{friends.length}</p>
   </figure>
-  <div className="card-body items-center text-center">
+  <div className="card-body items-center text-center ">
     <h2 className="card-title text-[#64748b] ">Total Friend</h2>
   </div>
     </div>
 
-    <div className="card bg-white w-60 shadow">
+    <div className="card bg-white w-60 border shadow border-slate-300">
   <figure className="px-5 pt-5">
    <p className='text-4xl font-bold text-[#244d3f]'>{onTrackCount}</p>
   </figure>
@@ -51,7 +52,7 @@ const StatusCards = () => {
   </div>
     </div>
 
-    <div className="card  bg-white w-60 shadow">
+    <div className="card  bg-white w-60 border shadow border-slate-300">
   <figure className="px-5 pt-5">
    <p className='text-4xl font-bold text-[#244d3f]'>{needAttentionCount}</p>
   </figure>
@@ -60,14 +61,19 @@ const StatusCards = () => {
   </div>
     </div>
 
-    <div className="card  bg-white w-70 shadow ">
+    <div className="card  bg-white w-70 border shadow border-slate-300 ">
   <figure className="px-5 pt-5">
    <p className='text-4xl font-bold text-[#244d3f]'>{almostDueCount}</p>
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title text-[#64748b]">Interactions This Month</h2>
   </div>
+ 
     </div>
+
+</div>
+<br />
+<div className="divider divider-success "></div>
 </div>
     );
 };
