@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import { useParams } from 'react-router';
 import { useParams } from 'react-router-dom';
 import useFndHook from '../customHook/useFndHook';
@@ -9,6 +9,9 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiPhoneCall } from "react-icons/fi";
 import { BsChatLeftText } from "react-icons/bs";
 import { GoDeviceCameraVideo } from "react-icons/go";
+import { ContactHistoryContext } from '../context/ContactHistoryContext';
+
+import { toast } from 'react-toastify';
 
 const FriendsDetails = () => {
     const {fnd_id} = useParams();
@@ -21,6 +24,10 @@ const FriendsDetails = () => {
     const expectedFriend = friends.find((friend) => friend.id === Number(fnd_id))
     console.log(expectedFriend,"expectedFriend")
 
+
+    // Destructing variable by context
+    const {callLog, setCallLog, videoLog, setVideoLog,textLog, setTextLog} = useContext(ContactHistoryContext)
+
     // Loading State
   if (loading) {
     return (
@@ -29,6 +36,24 @@ const FriendsDetails = () => {
       </div>
     );
   }
+
+
+  // Call button
+  const handleCallLog = () => {
+    setCallLog([...callLog,expectedFriend])
+    toast.success(`${expectedFriend.name} Call !`)
+  }
+  // Video button
+  const handleVideoLog = () => {
+    setVideoLog([...videoLog,expectedFriend])
+    toast.success(`${expectedFriend.name} Video Call !`)
+  }
+  // Text Button
+  const handleTextLog = () => {
+    setTextLog([...textLog,expectedFriend])
+    toast.success(`${expectedFriend.name} Text !`)
+  }
+
 
   // Not Found State
   if (!expectedFriend) {
@@ -181,15 +206,15 @@ const FriendsDetails = () => {
               <h2 className="card-title text-[#244d3f]">Quick Check-In</h2>
                <div className='flex justify-evenly items-center gap-4'>
                 <div>
-                <button className='btn btn-active w-40 p-10 flex flex-col items-center gap-2'><span><FiPhoneCall /></span> Call</button>
+                <button className='btn btn-active w-40 p-10 flex flex-col items-center gap-2' onClick={() => handleCallLog()}><span><FiPhoneCall /></span> Call</button>
                 </div>
                 <div>
 
-                <button className='btn btn-active w-40 p-10 flex flex-col items-center gap-2'><span><BsChatLeftText /></span>Text</button>
+                <button className='btn btn-active w-40 p-10 flex flex-col items-center gap-2' onClick={() => handleVideoLog()}><span><BsChatLeftText /></span>Text</button>
                 </div>
                 <div>
 
-                <button className='btn btn-active w-40 p-10 flex flex-col items-center gap-2'><span><GoDeviceCameraVideo /></span> Video</button>
+                <button className='btn btn-active w-40 p-10 flex flex-col items-center gap-2'onClick={() => handleTextLog()}><span><GoDeviceCameraVideo /></span> Video</button>
                 </div>
                </div>
             </div>
