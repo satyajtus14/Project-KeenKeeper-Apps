@@ -54,7 +54,7 @@ const FriendsDetails = () => {
  
 
     return (
-        <div className='container mx-auto '>
+        <div className='container mx-auto mb-20'>
             <div className="min-h-screen bg-base-200 p-6">
          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
         
@@ -180,11 +180,17 @@ const FriendsDetails = () => {
             <div className="card-body">
               <h2 className="card-title text-[#244d3f]">Quick Check-In</h2>
                <div className='flex justify-evenly items-center gap-4'>
-               <div>
-               <button className='btn btn-active w-45 p-4'><FiPhoneCall /> Call</button>
-               </div>
-                <button className='btn btn-active w-45 p-4'><BsChatLeftText />Text</button>
-                <button className='btn btn-active w-45 p-4'><GoDeviceCameraVideo /> Video</button>
+                <div>
+                <button className='btn btn-active w-40 p-10 flex flex-col items-center gap-2'><span><FiPhoneCall /></span> Call</button>
+                </div>
+                <div>
+
+                <button className='btn btn-active w-40 p-10 flex flex-col items-center gap-2'><span><BsChatLeftText /></span>Text</button>
+                </div>
+                <div>
+
+                <button className='btn btn-active w-40 p-10 flex flex-col items-center gap-2'><span><GoDeviceCameraVideo /></span> Video</button>
+                </div>
                </div>
             </div>
           </div>
