@@ -13,7 +13,7 @@ const Stats = () => {
   ];
 
   return (
-    <div className="container mx-auto my-10 shadow p-10 rounded-md border-slate-300">
+    <div className="container mx-auto my-5 shadow p-10 rounded-md border-slate-300">
       <h2 className="text-4xl font-bold mb-15">Friendship Analytics</h2>
       <div className="card bg-base-100 shadow border border-slate-300">
         <div className="card-body space-y-3">
@@ -35,6 +35,7 @@ const Stats = () => {
                     maxHeight: "80vh",
                     margin: "auto",
                     aspectRatio: 1,
+                    marginBottom: "20px",
                   }}
                   responsive
                 >
@@ -50,7 +51,9 @@ const Stats = () => {
                     dataKey="value"
                     isAnimationActive={true}
                   />
-                  <Legend />
+                  <Legend wrapperStyle={{
+                       marginBottom: -40
+                     }}/>
                   <Tooltip />
                 </PieChart>
               </div>
