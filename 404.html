@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // Redirect to index.html and pass the path as a query param
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      var newUrl = window.location.origin + '/Project-KeenKeeper-Apps/' +
+        '?redirect=' + encodeURIComponent(path + search + hash);
+      window.location.replace(newUrl);
+    </script>
+  </head>
+</html>
