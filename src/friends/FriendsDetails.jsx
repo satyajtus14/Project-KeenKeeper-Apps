@@ -60,7 +60,7 @@ const FriendsDetails = () => {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <div className="alert alert-error shadow-lg">
-          <span>Friend not found.</span>
+          <h2 className='text-center text-3xl font-bold text-black my-5'>No Friend found to your list!</h2>
         </div>
       </div>
     );
