@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../layout/RootLayout";
 import HomePage from "../pages/HomePage";
-import Timeline from "../pages/Timeline";
+
 import Stats from "../pages/Stats";
 import ErrorPage from "../errorPages/ErrorPage";
 import FriendsDetails from "../friends/FriendsDetails";
+import Timeline from "../pages/Timeline";
 
 
 export const router = createBrowserRouter([

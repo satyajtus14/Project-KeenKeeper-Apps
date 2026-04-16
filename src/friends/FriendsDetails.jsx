@@ -13,6 +13,7 @@ import { ContactHistoryContext } from '../context/ContactHistoryContext';
 
 import { toast } from 'react-toastify';
 
+
 const FriendsDetails = () => {
     const {fnd_id} = useParams();
     console.log(fnd_id,"Loading data from friends details page")
@@ -219,11 +220,6 @@ const FriendsDetails = () => {
                </div>
             </div>
           </div>
-
-
-
-  
-
         </div>
       </div>
     </div>

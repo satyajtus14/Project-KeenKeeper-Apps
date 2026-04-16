@@ -1,6 +1,8 @@
-import React from 'react';
-import { ContactHistoryContext } from './ContactHistoryContext';
+import React, { useEffect } from 'react';
+
 import { useState } from 'react';
+import { getAllCallInfoFromLocalDB } from '../utils/LocalDB';
+import { ContactHistoryContext } from './ContactHistoryContext';
 
 
 
@@ -8,7 +10,14 @@ const ContactHistoryProvider = ({children}) => {
     const [callLog, setCallLog] = useState([])
     const [videoLog,setVideoLog] = useState([])
     const [textLog,setTextLog] = useState([])
+    const [sortingType, setSortingType] = useState("")
 
+
+/* This useEffect Hook for store data in the local DB */
+   useEffect (() => {
+    getAllCallInfoFromLocalDB();
+
+   },[]);
 
     const data = {
         callLog,
@@ -16,7 +25,9 @@ const ContactHistoryProvider = ({children}) => {
         videoLog,
         setVideoLog,
         textLog,
-        setTextLog
+        setTextLog,
+        sortingType,
+        setSortingType
     }
 
     return (
