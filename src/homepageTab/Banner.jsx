@@ -6,7 +6,7 @@ const Banner = () => {
     return (
         <div className='container mx-auto'>
             <div>
-            <h1 className='text-center text-5xl font-bold text-[#1f2937] mb-2'>Friends to keep close in your life</h1>
+            <h1 className='text-center text-xl md:text-3xl lg:text-5xl font-bold text-[#1f2937] mb-2'>Friends to keep close in your life</h1>
             <p className='text-center text-[#64748b] mb-8'>Your personal shelf of meaningful connections. Browse, tend, and nurture the <br />
             relationships that matter most.</p>
             

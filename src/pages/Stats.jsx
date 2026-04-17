@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ContactHistoryContext } from "../context/ContactHistoryContext";
-import { Legend, Pie, PieChart, Tooltip } from "recharts";
+import { Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 
 const Stats = () => {
   const { callLog, videoLog, textLog } = useContext(ContactHistoryContext);
@@ -13,51 +13,41 @@ const Stats = () => {
   ];
 
   return (
-    <div className="container mx-auto my-5 shadow p-10 rounded-md border-slate-300">
-      <h2 className="text-4xl font-bold mb-15">Friendship Analytics</h2>
+    <div className="container mx-auto my-5 shadow p-4 md:p-8 rounded-md border border-slate-300">
+      <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12">
+        Friendship Analytics
+      </h2>
+
       <div className="card bg-base-100 shadow border border-slate-300">
-        <div className="card-body space-y-3">
-          <h3 className="card-title text-[#244d3f]">By Interaction Type</h3>
+        <div className="card-body space-y-4">
+          <h3 className="card-title text-[#244d3f] text-lg md:text-2xl">
+            By Interaction Type
+          </h3>
 
           {callLog.length === 0 &&
           videoLog.length === 0 &&
           textLog.length === 0 ? (
-            <h2 className="font-bold text-4xl text-[#244d3f] text-center my-5">
+            <h2 className="font-bold text-xl md:text-4xl text-[#244d3f] text-center my-5">
               No Interaction History Information Found !
             </h2>
           ) : (
-            <>
-              <div>
-                <PieChart
-                  style={{
-                    width: "100%",
-                    maxWidth: "500px",
-                    maxHeight: "80vh",
-                    margin: "auto",
-                    aspectRatio: 1,
-                    marginBottom: "20px",
-                  }}
-                  responsive
-                >
+            <div className="w-full h-[280px] sm:h-[350px] md:h-[450px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
                   <Pie
                     data={data}
-                    innerRadius="80%"
-                    outerRadius="100%"
-                    // Corner radius is the rounded edge of each pie slice
-                    cornerRadius="50%"
-                    fill="#8884d8"
-                    // padding angle is the gap between each pie slice
+                    innerRadius="70%"
+                    outerRadius="90%"
+                    cornerRadius={8}
                     paddingAngle={5}
                     dataKey="value"
                     isAnimationActive={true}
                   />
-                  <Legend wrapperStyle={{
-                       marginBottom: -40
-                     }}/>
+                  <Legend />
                   <Tooltip />
                 </PieChart>
-              </div>
-            </>
+              </ResponsiveContainer>
+            </div>
           )}
         </div>
       </div>

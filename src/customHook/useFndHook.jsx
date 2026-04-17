@@ -8,7 +8,7 @@ const useFndHook = () => {
 
   useEffect(() => {
     const friendsFetchData = async () => {
-      const res = await fetch("/friends.json");
+      const res = await fetch(`${import.meta.env.BASE_URL}friends.json`);
       const data = await res.json();
       console.log("Data fetching from custom hook page", data);
       setFriends(data);

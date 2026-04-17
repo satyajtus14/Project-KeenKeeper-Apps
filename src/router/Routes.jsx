@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
 import HomePage from "../pages/HomePage";
 
@@ -9,6 +9,7 @@ import Timeline from "../pages/Timeline";
 
 
 export const router = createBrowserRouter([
+ 
     {
       path: "/",
       element: <RootLayout />,
@@ -31,5 +32,10 @@ export const router = createBrowserRouter([
         }
       ],
       errorElement: <ErrorPage />,
+
     },
-  ]);
+  ],
+  {
+    basename: "/Project-KeenKeeper-Apps"
+  }
+);

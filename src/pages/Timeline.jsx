@@ -25,25 +25,27 @@ const Timeline = () => {
   }
 
   return (
-    <div className="container mx-auto my-10">
-      <h2 className="text-4xl font-bold mb-15">Timeline</h2>
+    <div className="container mx-auto my-6 md:my-10 px-4">
+      <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-10">Timeline</h2>
 
       <div className="card bg-base-100 shadow border border-slate-300">
-        <div className="card-body space-y-3">
-          <div className="flex justify-start items-center gap-8">
-            <h2 className="card-title text-[#244d3f]">Interaction History</h2>
+        <div className="card-body space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <h2 className="card-title text-[#244d3f] text-lg md:text-2xl">
+              Interaction History
+            </h2>
             <FliterDropDown />
           </div>
 
           {filteredData.length === 0 ? (
-            <h2 className="font-bold text-4xl text-[#244d3f] text-center my-5">
+            <h2 className="font-bold text-xl md:text-4xl text-[#244d3f] text-center my-5">
               No Interaction History Found!
             </h2>
           ) : (
             filteredData.map((item) => (
               <div
                 key={item.id}
-                className="flex gap-4 items-center shadow p-4 rounded-md bg-slate-100 mb-2"
+                className="flex items-start sm:items-center gap-3 md:gap-4 shadow p-3 md:p-4 rounded-md bg-slate-100"
               >
                 <img
                   src={
@@ -53,18 +55,19 @@ const Timeline = () => {
                       ? videoIMG
                       : textIMG
                   }
-                  className="h-[30px] w-auto"
+                  alt={item.type}
+                  className="h-6 w-6 md:h-8 md:w-8"
                 />
 
-                <div>
-                  <h2 className="font-semibold text-md text-[#64748b]">
-                    <span className="font-semibold text-xl text-black">
+                <div className="flex-1">
+                  <h2 className="text-sm md:text-base text-[#64748b]">
+                    <span className="font-semibold text-base md:text-xl text-black">
                       {item.type}
                     </span>{" "}
                     with {item.name}
                   </h2>
 
-                  <p className="text-sm text-gray-500">
+                  <p className="text-xs md:text-sm text-gray-500">
                     <CurrentTimeStamp />
                   </p>
                 </div>

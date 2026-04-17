@@ -1,81 +1,96 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const StatusCards = () => {
   const [friends, setFriends] = useState([]);
 
-  const [almostDueCount, setAlmostDueCount] =useState(0);
+  const [almostDueCount, setAlmostDueCount] = useState(0);
 
-  const [onTrackCount, setOnTrackCount] =useState(0);
+  const [onTrackCount, setOnTrackCount] = useState(0);
 
-  const [needAttentionCount, setNeedAttentionCount] =useState(0);
+  const [needAttentionCount, setNeedAttentionCount] = useState(0);
 
-  
   useEffect(() => {
     const friendsFetchData = async () => {
-      const res = await fetch("/friends.json");
+      const res = await fetch(`${import.meta.env.BASE_URL}friends.json`);
       const data = await res.json();
       console.log("Data fetching from Status Cards page", data);
       setFriends(data);
-      
-      const count = data.filter((friend)=> friend.status === 'Almost Due').length;
+
+      const count = data.filter(
+        (friend) => friend.status === "Almost Due"
+      ).length;
       setAlmostDueCount(count);
 
-      const trackCount = data.filter((friend)=> friend.status === 'On-Track').length;
-      setOnTrackCount(trackCount)
+      const trackCount = data.filter(
+        (friend) => friend.status === "On-Track"
+      ).length;
+      setOnTrackCount(trackCount);
 
-      const needAttentionCount = data.filter((friend)=> friend.status === 'Overdue').length;
-      setNeedAttentionCount(needAttentionCount)
+      const needAttentionCount = data.filter(
+        (friend) => friend.status === "Overdue"
+      ).length;
+      setNeedAttentionCount(needAttentionCount);
     };
     friendsFetchData();
   }, []);
 
   console.log(friends);
 
-    return (
+  return (
+
     <div>
-    <div className=' container mx-auto flex justify-between  gap-5'>
-    <div className="card bg-white w-60 border shadow border-slate-300">
-  <figure className="px-5 pt-5">
-   <p className='text-4xl font-bold text-[#244d3f]'>{friends.length}</p>
-  </figure>
-  <div className="card-body items-center text-center ">
-    <h2 className="card-title text-[#64748b] ">Total Friend</h2>
-  </div>
-    </div>
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-4">
+        <div className="card bg-white w-full border shadow border-slate-300">
+          <figure className="px-5 pt-5">
+            <p className="text-3xl md:text-4xl font-bold text-[#244d3f]">
+              {friends.length}
+            </p>
+          </figure>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title text-[#64748b]">Total Friend</h2>
+          </div>
+        </div>
 
-    <div className="card bg-white w-60 border shadow border-slate-300">
-  <figure className="px-5 pt-5">
-   <p className='text-4xl font-bold text-[#244d3f]'>{onTrackCount}</p>
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title text-[#64748b]">On Track</h2>
-  </div>
-    </div>
+        <div className="card bg-white w-full border shadow border-slate-300">
+          <figure className="px-5 pt-5">
+            <p className="text-3xl md:text-4xl font-bold text-[#244d3f]">
+              {onTrackCount}
+            </p>
+          </figure>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title text-[#64748b]">On Track</h2>
+          </div>
+        </div>
 
-    <div className="card  bg-white w-60 border shadow border-slate-300">
-  <figure className="px-5 pt-5">
-   <p className='text-4xl font-bold text-[#244d3f]'>{needAttentionCount}</p>
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title text-[#64748b]">Need Attention</h2>
-  </div>
-    </div>
+        <div className="card bg-white w-full border shadow border-slate-300">
+          <figure className="px-5 pt-5">
+            <p className="text-3xl md:text-4xl font-bold text-[#244d3f]">
+              {needAttentionCount}
+            </p>
+          </figure>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title text-[#64748b]">Need Attention</h2>
+          </div>
+        </div>
 
-    <div className="card  bg-white w-70 border shadow border-slate-300 ">
-  <figure className="px-5 pt-5">
-   <p className='text-4xl font-bold text-[#244d3f]'>{almostDueCount}</p>
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title text-[#64748b]">Interactions This Month</h2>
-  </div>
- 
-    </div>
+        <div className="card bg-white w-full border shadow border-slate-300">
+          <figure className="px-5 pt-5">
+            <p className="text-3xl md:text-4xl font-bold text-[#244d3f]">
+              {almostDueCount}
+            </p>
+          </figure>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title text-[#64748b]">
+              Interactions This Month
+            </h2>
+          </div>
+        </div>
+      </div>
 
-</div>
-<br />
-<div className="divider divider-success "></div>
-</div>
-    );
+      <br />
+      <div className="divider divider-success"></div>
+    </div>
+  );
 };
 
 export default StatusCards;
