@@ -23,8 +23,8 @@ KeenKeeper is a robust and user-friendly web application designed to help users 
 -   🛡️ **ESLint Integration**: Ensures code quality and consistency across the codebase.
 
 ## Live Link:
- - 1. Github: https://satyajtus14.github.io/Project-KeenKeeper-Apps
- - 2. Netlify: https://project-keenkeeper-apps.netlify.app/
+ - Github: https://satyajtus14.github.io/Project-KeenKeeper-Apps
+ - Netlify: https://project-keenkeeper-apps.netlify.app/
 
 
 
