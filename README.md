@@ -2,6 +2,9 @@
 
 <div align="center">
 
+<p align="center">
+  <img src="public/logo.png" alt="Logo" width="200" />
+</p>
 
 
 **A modern, responsive React application for efficient data visualization and management, built with a focus on intuitive user experience.**
