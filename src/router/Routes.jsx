@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
 
     },
   ],
-  {
-    basename: "/Project-KeenKeeper-Apps"
-  }
+  // {
+  //   basename: "/Project-KeenKeeper-Apps"
+  // }
 );
